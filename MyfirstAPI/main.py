@@ -7,7 +7,7 @@ connectionString = "mongodb+srv://<db_username>:<db_password>@cluster0.pukpg.mon
 
 # Connect to Mongo Atlas
 client = motor.motor_asyncio.AsyncIOMotorClient(connectionString)
-db = client.multimedia_db
+db = client.Data
 
 class PlayerScore(BaseModel):
     player_name: str
