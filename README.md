@@ -63,9 +63,7 @@ Use **Postman** to test the following endpoints:
 
 - FastAPI – RESTful API Framework
 - MongoDB Atlas – Cloud NoSQL Database
-- Motor – Async MongoDB Driver
-- Uvicorn** – ASGI Server
 - Postman – API Testing
-- Git/GitHub – Version Control
-
+- GitHub – Version Control
+- GitHubDesktop – update github
 ---
