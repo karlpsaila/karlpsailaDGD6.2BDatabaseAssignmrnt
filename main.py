@@ -11,15 +11,21 @@ It connects to a MongoDB Atlas database using the Motor async driver.
 
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from pydantic import BaseModel
+from dotenv import load_dotenv
+import os
 import motor.motor_asyncio
+
+load_dotenv()
+connectionString = os.getenv("MONGO_URI")
+
+client = motor.motor_asyncio.AsyncIOMotorClient(connectionString)
+db = client["Data"]  # or whatever your DB name is
+
 
 # Initialize the FastAPI app
 app = FastAPI()
 
 #  Hardcoded credentials to access MongoDB Atlas
-username = 'karl'
-password = '1234'
-connectionString = f'mongodb+srv://{username}:{password}@cluster0.pukpg.mongodb.net/'
 
 # Create a MongoDB client and connect to the 'Data' database
 client = motor.motor_asyncio.AsyncIOMotorClient(connectionString)
