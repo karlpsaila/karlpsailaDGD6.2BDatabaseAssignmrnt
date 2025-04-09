@@ -3,7 +3,10 @@ from pydantic import BaseModel
 import motor.motor_asyncio
 
 app = FastAPI()
-connectionString = "mongodb+srv://<db_username>:<db_password>@cluster0.pukpg.mongodb.net/"
+username = 'karl'
+password = '1234'
+connectionString = f'mongodb+srv://{username}:{password}@cluster0.pukpg.mongodb.net/'
+
 
 # Connect to Mongo Atlas
 client = motor.motor_asyncio.AsyncIOMotorClient(connectionString)
