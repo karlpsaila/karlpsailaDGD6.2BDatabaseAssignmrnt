@@ -60,7 +60,7 @@ async def upload_audio(file: UploadFile = File(...)):
 
     if not file.filename.endswith(('.mp3', '.wav')):
         raise HTTPException(status_code=400, detail="Invalid file type. Only MP3 and WAV files are allowed.")
-
+ 
     content = await file.read()
     audio_doc = {"filename": file.filename, "content": content}
     result = await db.audio.insert_one(audio_doc)
